@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js">
+</script>
+<title>hello everyone</title>
+
+<style>
+.img1{
+    display: block;
+}
+.img2{
+    display: none;
+}
+.img3{
+    display: none;
+}
+
+.imgBox img{
+    /*width: 60%;*/
+    /*height: 600px;*/
+    margin: 0 auto;
+    padding-top: 50px;
+}
+.imgBox{
+    height: 1000px;
+    width: 100%;
+}
+#div1{
+    height: 20px;
+    width: 20px;
+    background-color: coral;
+}
+</style>
+<body>
+
+<p align="center">hello everybody it is my th first banner practice </p>
+
+<p align="left">【公告】</p>
+<p >  &nbsp;&nbsp;侯小智第一版上线了！！！</p>
+<div class="imgBox" >
+    <img class=" img-slide img1" src="/a.jpg" alt="http://dwz.date/eAz6" title="图片1" >
+    <img class="img-slide img2" src="/b.jpg" alt="http://dwz.date/eAz6" title="图片2">
+    <img class="img-slide img3" src="/c.jpg" alt="http://dwz.date/eAz6" title="图片3">
+</div>
+
+
+<input type="button" id="div1" onclick="test1()">快来签到吧</input>
+
+<script type="text/javascript" >
+
+    var index =0;
+    //改变图片
+    function ChangeImg(){
+        index ++;
+        var elementsByClassName = document.getElementsByClassName("img-slide");
+        if(index>=elementsByClassName.length){
+            index = 0;
+        }
+        for (let i = 0; i <elementsByClassName.length; i++) {
+
+            elementsByClassName[i].style.display = 'none';
+        }
+        elementsByClassName[index].style.display = 'block';
+    }
+    //定时执行 2秒
+    setInterval(ChangeImg,2000);
+
+    function test1() {
+        $.ajax({
+            url: "/test/demo1",
+            data: {name: 'jenny'},
+            type: "GET",
+            //dataType: "json",
+            success: function (data) {
+                // var div1 = document.getElementById('div1');
+                // div1.innerHTML = "bbb";
+                $("#div1").html("<p>恭喜你，已经签到！</p>");
+                // data = eval("(" + data+ ")");
+                data = jQuery.parseJSON(data);  // dataType注释了，故注意反序列化
+                $("#ret").text(data.result);
+            }
+        });
+    }
+</script>
+</body>
+</html>
