@@ -1,0 +1,25 @@
+spring:
+  # DataSource Config
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://152.136.156.248:3306/exchange?Unicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useSSL=false
+#    username: root
+#    password: Hou123@;
+
+  application:
+    name: study_demo
+#  mvc:
+    # 默认值为 classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/
+  mvc:
+    static-path-pattern: /**
+  web:
+    resources:
+      static-locations: classpath:page/,classpath:imgs/
+server:
+  port: 8081
+#
+#mybatis-plus:
+#  mapper-locations: classpath*:/mapper/*.xml
+#  type-aliases-package: com.hou.xs.entity
+
+
