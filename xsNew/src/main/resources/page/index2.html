@@ -20,10 +20,17 @@
 <div class="div2  J_payPopupShow">2</div>
 <div class="div3  J_payPopupShow">3</div>
 <div id="scrollSearchDiv">按钮显示隐藏</div>
+<input id="name1" type="text" value="1">
+<input id="name2" type="text" value="1">
 <script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
 
 
 <script type="text/javascript">
+  $(function () {
+    if($("#name1").val()&&$("#name2").val()){
+      alert(1);
+    }
+  });
   $(function () {
     //绑定滚动条事件
     //绑定滚动条事件

@@ -10,19 +10,32 @@ public class Demo {
         Demo demo = new Demo();
 
         //获取string类型
-        List<String> array = new ArrayList<String>();
-        array.add("test");
-        array.add("doub");
-        String str = demo.getListFisrt(array);
-        System.out.println(str);
+//        List<String> array = new ArrayList<String>();
+//        array.add("test");
+//        array.add("doub");
+//        String str = demo.getListFisrt(array);
+//        System.out.println(str);
 
         //获取nums类型
         List<Integer> nums = new ArrayList<Integer>();
         nums.add(12);
         nums.add(13);
+        for (Integer num : nums) {
 
-        Integer num = demo.getListFisrt(nums);
-        System.out.println(num);
+        }
+
+    }
+
+    public  static int test1(){
+        List<Integer> nums = new ArrayList<Integer>();
+        nums.add(12);
+        nums.add(13);
+        for (Integer num : nums) {
+            if(num==1){
+                return 1;
+            }
+        }
+        return 1;
     }
 
     /**

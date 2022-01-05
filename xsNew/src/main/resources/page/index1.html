@@ -74,9 +74,7 @@
             url: "/test/demo1",
             data: {name: 'jenny'},
             type: "GET",
-            //dataType: "json",
             success: function (data) {
-                // var div1 = document.getElementById('div1');
                 // div1.innerHTML = "bbb";
                 $("#div1").html("<p>恭喜你，已经签到！</p>");
                 // data = eval("(" + data+ ")");
@@ -85,6 +83,16 @@
             }
         });
     }
+
+    function myTest(){
+       foo();
+       function foo(){
+            alert("我来自 foo");
+        }
+    }
+    myTest();
+
+
 </script>
 </body>
 </html>
